@@ -1,18 +1,22 @@
-export function counter(state, action) {
+export function counter(state = 0, action) {
   switch (action.type) {
-    case "INCREMENT":
+    case "counter/INCREMENT":
       return state + action.amount;
-    case "RESET":
+    case "counter/RESET":
       return 0;
     default:
       return state;
   }
 }
-const INCREMENT = "INCREMENT";
+const INCREMENT = "counter/INCREMENT";
 export function increment(amount) {
   return { type: INCREMENT, amount };
 }
-const RESET = "RESET";
+const RESET = "counter/RESET";
 export function reset() {
   return { type: RESET };
+}
+
+export function getCount(state) {
+  return state.counter;
 }

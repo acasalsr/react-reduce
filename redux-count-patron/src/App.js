@@ -4,8 +4,9 @@ import { Provider } from "react-redux";
 import CounterUseReducer from "./CounterUseReducer";
 import CounterRedux from "./CounterRedux";
 
-import { createStore } from "redux";
-const store = createStore(counter, 0);
+import { combineReducers, createStore } from "redux";
+const reducer = combineReducers({ counter });
+const store = createStore(reducer);
 
 export default function App() {
   return (

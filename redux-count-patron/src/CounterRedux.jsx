@@ -1,9 +1,9 @@
 import "./index.css";
-import { increment, reset } from "./counter";
+import { getCount, increment, reset } from "./counter";
 import { useDispatch, useSelector } from "react-redux";
 
 export default function CounterRedux() {
-  const count = useSelector((state) => state);
+  const count = useSelector(getCount);
   const dispatch = useDispatch();
 
   return (
